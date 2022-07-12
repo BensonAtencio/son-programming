@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    color: black;
+    font-size: 18px;
+}
+.mHeader{
+    margin: 5px;
+    text-align: center;
+}
+hr{
+    margin: 5px;
+}
+.footer{
+    text-align: center;
+}
