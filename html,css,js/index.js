@@ -1,4 +1,4 @@
-class Person{
+/*class Person{
     constructor(name, age){
         this.name = name;
         this.age = age;
@@ -27,3 +27,14 @@ const person2 = new Cars("Franco", 300, "BSCS", "Toyota");
 
 console.log(person1);
 console.log(person2);
+*/
+
+
+document.getElementById("btn").onmouseover = function() {mouseOver()};
+document.getElementById("btn").onmouseout = function() {mouseOut()};
+function mouseOver(){
+    document.getElementById("btn").style.color = "Red";
+}
+function mouseOut(){
+    document.getElementById("btn").style.color = "Black";
+}
