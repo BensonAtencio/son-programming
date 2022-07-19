@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JavaScript Activity</title>89
+        
+        <style>
+            table, th, td{
+                border: 1px solid grey;
+                background-color: lightgrey;
+                border-style: inset;
+            }
+            th{
+                background-color: lightblue;
+            }
+            caption{
+                color: blue;
+                font-weight: bold;
+            }
+            #rem, #comp{
+                font-weight: bold;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    
+        <table style="width: 200px;">
+            <caption>Online Grade Calculator</caption>
+
+            <tr><th colspan="2">Major Exam(60%)</th></tr>
+
+            <tr><td>Prelims</td><td><input type="text" size="4px" id="pre"></td></tr>
+
+            <tr><td>Midterms</td><td><input type="text" size="4px" id="mid"></td></tr>
+
+            <tr><td>Semi-Finals</td><td><input type="text" size="4px" id="semi"></td></tr>
+
+            <tr><td>Finals</td><td><input type="text" size="4px" id="fin"></td></tr>
+
+            <tr><th colspan="2">Laboratory(30%)</th></tr>
+
+            <tr><td>Exercises</td><td><input type="text" size="4px" id="exe"></td></tr>
+
+            <tr><td>Projects</td><td><input type="text" size="4px" id="proj"></td></tr>
+
+            <tr><th colspan="2">Class Standing(10%)</th></tr>
+
+            <tr><td>Attendance</td><td><input type="text" size="4px" id="attend"></td></tr>
+
+            <tr><td>Participation</td><td><input type="text" size="4px" id="parti"></td></tr>
+
+            <tr><td>Assignments/Quizzes</td><td><input type="text" size="4px" id="assign"></td></tr>
+
+            <tr><th colspan="2"><button type="submit" onclick="compute()">Calculate Grade</button></th></tr>
+
+            <tr><td>Computed Grade</td><td id="comp"></td></tr>
+
+            <tr><td>Remarks</td><td id="rem"></td></tr>
+
+        </table>
+
+        <script>
+            function compute(){
+                let pre = parseFloat(document.getElementById('pre').value);
+                let mid = parseFloat(document.getElementById('mid').value);
+                let semi = parseFloat(document.getElementById('semi').value);
+                let fin = parseFloat(document.getElementById('fin').value);
+                let exe = parseFloat(document.getElementById('exe').value);
+                let proj = parseFloat(document.getElementById('proj').value);
+                let attend = parseFloat(document.getElementById('attend').value);
+                let parti = parseFloat(document.getElementById('parti').value);
+                let assign = parseFloat(document.getElementById('assign').value);
+                let major = ((pre+mid+semi+fin)/4)*.60;
+                let lab = ((exe+proj)/2)*.30;
+                let classS = ((attend+parti+assign)/3)*.10;
+                let compG = (major+lab+classS);
+                let round = compG.toFixed(2);
+
+                /*
+                Sir dito po ginawa konalang greater than or equal to 74.5
+                Sa direction po kase if ever na mag saktong 74.5 yung computed grade
+                Walapong ma sasatisfy na condition dun sa tatlo.
+                */
+                if(compG >= 74.5){
+                    document.getElementById('comp').innerHTML = round;
+                    document.getElementById('rem').innerHTML = "Passed";
+                }
+                else if(compG < 70){
+                    document.getElementById('comp').innerHTML = round;
+                    document.getElementById('rem').innerHTML = "Failed";
+                }
+                else if(compG >=70 && compG <= 74.4){
+                    document.getElementById('comp').innerHTML = round;
+                    document.getElementById('rem').innerHTML = "Removal";
+                }
+                else{
+                    window.alert('Invalid Input');
+                }
+            }
+
+        </script>
+    </body>
+
+</html>
