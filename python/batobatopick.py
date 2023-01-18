@@ -1,11 +1,11 @@
 import threading
-from random import randint
+import random
 import keyboard
 import sys
 
 y = ["r", "p", "s"]
 
-z = y[randint(0, 2)]
+z = y[random.randint(0, 2)]
 
 print("This is a game of rock paper scissors, just press the esc key if you want to quit")
 
@@ -39,7 +39,7 @@ def game():
             print("Bonak mali input mo")
             player == False
 
-        z = y[randint(0, 2)]
+        z = y[random.randint(0, 2)]
 
 def exT():
     global player

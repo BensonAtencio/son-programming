@@ -1,10 +1,10 @@
 class Person:
-    amount = 0
+    numberOfPerson = 0
     def __init__(self, name, age, height):
         self.name = name
         self.age = age
         self.height = height
-        Person.amount += 1
+        Person.numberOfPerson += 1
 
     def greet(self):
         print(f"Hi my name is {self.name}, {self.height}cm and I am {self.age} years old")
@@ -18,6 +18,7 @@ class Person:
     def getOlder(self):
         self.age += years
 
+# inheritance po itong part nato
 class Worker(Person):
     def __init__(self, name, age, height, salary):
         super(Worker, self).__init__(name, age, height)
@@ -31,7 +32,7 @@ class Worker(Person):
         text += f", Salary: {self.salary}"
         return text
 
-worker1 = Worker("Douglas", 75, 180, 3000)
+worker1 = Worker("Hannah Kaye", 21, 166, 100000)
 print(worker1)
 print(worker1.calcSal())
 
