@@ -13,7 +13,10 @@ while True:
 
     for (x, y, w, h) in face_cords:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-    
+
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        cv2.putText(frame, f'({x}, {y})', (x - 10, y - 10), font, .5,(0,255,0),1,cv2.LINE_AA)
+
     cv2.imshow('Live Video', frame)
     if cv2.waitKey(1) == ord("q"):
         break

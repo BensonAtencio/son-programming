@@ -11,7 +11,11 @@ time.sleep(5)
 
 while i < 5:
     pg.click()
-    pg.write("Hello")
-    pg.press('enter')
+    # pg.write("Hello")
+    # pg.write(str(i))
+    # pg.press('enter')
     # pg.click()
     i += 1
+
+    
+
